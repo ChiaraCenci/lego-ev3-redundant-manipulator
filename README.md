@@ -49,11 +49,15 @@ Regenerated from the original simulation equations with translated labels; these
 
 The primary position task uses
 
-$$\dot q = J^+(\dot x_d + K(x_d-x)).$$
+```math
+\dot q = J^+(\dot x_d + K(x_d-x)).
+```
 
 The simulation adds a secondary term:
 
-$$\dot q = J^+(\dot x_d+Ke)+(I-J^+J)\,k_a\nabla_q d(q)\,\mathbf{1}_{d<d_{act}}.$$
+```math
+\dot q = J^+(\dot x_d+Ke)+(I-J^+J)\,k_a\nabla_q d(q)\,\mathbf{1}_{d<d_{act}}.
+```
 
 The obstacle is a sphere centred at **[−0.005, 0.062, 0.183] m**, radius **0.025 m**. The objective increases the signed clearance of the fixed auxiliary link's midpoint from the sphere. Its gradient is `J_mid.T @ unit_direction`, independently derived with SymPy. The task activates below **0.06 m** local clearance.
 
@@ -145,3 +149,4 @@ Legacy suffixes are supported by the loader. A timing file is required to avoid 
 See [METHODOLOGY.md](docs/METHODOLOGY.md) for technical caveats and changes, and [VALIDATION.md](docs/VALIDATION.md) for checks actually performed. Original input files are unchanged; no licence has been added. The full presentation and raw logs are not redistributed.
 
 The project demonstrates the distinction between ideal kinematic redundancy resolution and the constraints encountered in encoder-feedback execution on a physical LEGO manipulator. Results from a single geometry and a small set of trials do not establish general collision-avoidance guarantees, dynamic stability or clinical applicability.
+
