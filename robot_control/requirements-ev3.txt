@@ -1,0 +1,3 @@
+# Install on the compatible ev3dev system, not required by notebooks.
+python-ev3dev2
+numpy
